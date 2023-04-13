@@ -17,7 +17,7 @@ const HALF_LIFE_PERIOD = 5730;
  * dateSample('WOOT!') => false
  *
  */
-function dateSample(sampleActivity) {
+function dateSample(/*sampleActivity*/) {/*
 if(arguments.length!==1) return false;
 else {
   if(typeof sampleActivity === 'string') {
@@ -31,12 +31,10 @@ else {
     
   }
   else 
-  return false;
+  return false;*/
+  throw new NotImplementedError('Not implemented');
 }
 
-
-
-}
 
 module.exports = {
   dateSample
