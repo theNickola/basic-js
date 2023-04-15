@@ -6,25 +6,49 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 const chainMaker = {
   getLength() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return this.arrChain.length;
   },
-  addLink(/* value */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+
+
+
+  addLink(value) {
+    if(arguments.length === 0) 
+      this.arrChain.push('(  )');
+    else
+      this.arrChain.push(`( ${value} )`);
+    return this;
   },
-  removeLink(/* position */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+
+
+
+  removeLink(position) {
+    if (typeof position === 'number' && position > 0 && position < this.arrChain.length)
+      this.arrChain.splice(position-1, 1)
+    else {
+      this.arrChain = [];
+      throw new Error("You can't remove incorrect link!");
+    }
+    return this;
   },
+
+
+
   reverseChain() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    this.arrChain = this.arrChain.reverse();
+    return this;
   },
+
+
+
   finishChain() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  }
+    let finish = this.arrChain.join('~~');
+    this.arrChain = [];
+    return finish;
+  },
+
+
+
+  arrChain: []
 };
 
 module.exports = {
