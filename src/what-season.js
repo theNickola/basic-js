@@ -15,8 +15,8 @@ function getSeason(/*date*/) {
   throw new NotImplementedError('Not implemented');
   /*if(arguments.length!==1) return 'Unable to determine the time of year!';
 
-  if(!(date instanceof Date)) throw new Error('Invalid date!');
-  if(Object.getOwnPropertyNames(date).length !== 0) throw new Error('Invalid date!');
+  if(!(date instanceof Date) || Object.getOwnPropertyNames(date).length !== 0) 
+    throw new Error('Invalid date!');
   
   let m = date.getMonth()+1;
   let res = m > 2 && m < 6 ?  'spring' :
