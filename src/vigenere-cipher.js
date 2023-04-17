@@ -20,23 +20,22 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 class VigenereCipheringMachine {
-/*
+
+  
   constructor(type = true) {
       this.type = type;
-  }*/
-
-
-  encrypt(w,k) {throw new NotImplementedError('Not implemented');
-    /*
-    let directCrypt = this.getCrypt(w,k,'encrypt');
-    return this.type ? directCrypt : directCrypt.split('').reverse().join('');*/
   }
 
 
-  decrypt(w,k) {throw new NotImplementedError('Not implemented');
-    /*
+  encrypt(w,k) {
+    let directCrypt = this.getCrypt(w,k,'encrypt');
+    return this.type ? directCrypt : directCrypt.split('').reverse().join('');
+  }
+
+
+  decrypt(w,k) {
     let directCrypt = this.getCrypt(w,k,'decrypt');
-    return this.type ? directCrypt : directCrypt.split('').reverse().join('');*/
+    return this.type ? directCrypt : directCrypt.split('').reverse().join('');
   }
 
 
